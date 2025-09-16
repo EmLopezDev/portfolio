@@ -1,4 +1,5 @@
 import { IconLink } from "../Icon/IconLink";
+import { Link } from "react-router-dom";
 import ThemeButton from "../ThemeButton/ThemeButton";
 
 function Sidebar() {
@@ -21,15 +22,21 @@ function Sidebar() {
             <span className="sidebar__bullet">&#8226;</span>
             <nav className="sidebar__nav">
                 <ul className="sidebar__nav--list">
-                    <li className="sidebar__nav--item">Home</li>
-                    <li className="sidebar__nav--item">Projects</li>
-                    <li className="sidebar__nav--item">About</li>
+                    <li className="sidebar__nav--item">
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className="sidebar__nav--item">
+                        <Link to="/projects">Projects</Link>
+                    </li>
+                    <li className="sidebar__nav--item">
+                        <Link to="/about">About</Link>
+                    </li>
                 </ul>
             </nav>
             <span className="sidebar__bullet">&#8226;</span>
             <div className="sidebar__social">
                 <IconLink
-                    href=""
+                    href="http://www.linkedin.com/in/emmanuel-lopez-a812b0127"
                     name="linkedin"
                     size={24}
                 />

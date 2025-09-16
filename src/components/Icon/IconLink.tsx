@@ -14,7 +14,10 @@ export const IconLink = ({
     color = "currentColor",
 }: IconLinkType) => {
     return (
-        <a href={href}>
+        <a
+            href={href}
+            target="_blank"
+        >
             <Icon
                 name={name}
                 size={size}

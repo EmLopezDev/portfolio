@@ -11,6 +11,9 @@
 body {
     min-height: 100dvh;
     width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-bg-color);
 }
 
 ul {
@@ -22,9 +25,17 @@ a {
     text-decoration: none;
 }
 
-main {
+.app__container {
     height: 100dvh;
-    width: 100%;
+    width: 100vw;
+    max-width: u.rem(1400);
     background-color: var(--primary-bg-color);
     color: var(--primary-text-color);
+    display: flex;
+    position: relative;
+}
+
+.page__container {
+    padding-inline: u.rem(40);
+    padding-block: u.rem(40);
 }
