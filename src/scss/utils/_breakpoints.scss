@@ -1,0 +1,11 @@
+@use "functions" as f;
+
+$breakpoints: (
+    "mobile": f.em(1025),
+);
+
+@mixin breakpoint($size) {
+    @media (min-width: map-get($breakpoints, $size)) {
+        @content;
+    }
+}

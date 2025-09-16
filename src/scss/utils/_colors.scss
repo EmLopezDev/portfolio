@@ -1,0 +1,22 @@
+:root {
+    // Background
+    --bg-dark: hsl(211 100% 91%);
+    --bg: hsl(211 100% 96%);
+    --bg-light: hsl(211 100% 100%);
+    // Text
+    --text: hsl(222 100% 7%);
+    --text-muted: hsl(210 54% 29%);
+    // Unsure
+    --highlight: hsl(211 100% 100%);
+    // Borders
+    --border: hsl(210 34% 52%);
+    --border-muted: hsl(211 47% 64%);
+    // Buttons
+    --primary: hsl(208 74% 28%);
+    --secondary: hsl(38 100% 17%);
+    // Alerts
+    --danger: hsl(8 32% 41%);
+    --warning: hsl(51 46% 30%);
+    --success: hsl(150 37% 33%);
+    --info: hsl(217 34% 43%);
+}

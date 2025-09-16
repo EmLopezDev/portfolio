@@ -1,4 +1,51 @@
-.sideBar {
-    padding: 50px;
-    border: 1px solid black;
+@use "../utils/" as u;
+
+.sidebar {
+    border-right: 1px solid black;
+    height: 100dvh;
+    width: u.rem(300);
+    padding-inline: u.rem(40);
+    padding-block: u.rem(40);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--bg);
+
+    &__theme {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: u.rem(12);
+        font-size: u.rem(18);
+
+        &--image {
+            width: u.rem(200);
+            border-radius: 50%;
+        }
+    }
+
+    &__bullet {
+        font-size: u.rem(24);
+    }
+
+    &__nav--list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: u.rem(28);
+        font-size: u.rem(24);
+    }
+
+    &__social {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: u.rem(18);
+    }
 }

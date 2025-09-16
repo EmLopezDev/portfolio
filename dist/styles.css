@@ -1,1 +1,1 @@
-.sideBar{padding:50px;border:1px solid #000}*,::before,::after{margin:0;padding:0;box-sizing:border-box}/*# sourceMappingURL=styles.css.map */
+.sideBar{border-right:1px solid #000;min-height:100dvh;width:18.75rem;padding-inline:2.5rem;padding-block:2.5rem}*,::before,::after{margin:0;padding:0;box-sizing:border-box}body{min-height:100dvh;width:100vw}/*# sourceMappingURL=styles.css.map */

@@ -1,29 +1,53 @@
-import React from "react";
+import { IconLink } from "../Icon/IconLink";
 
 function Sidebar() {
     return (
-        <aside className="sideBar">
-            <div>
-                <button>Theme</button>
+        <aside className="sidebar">
+            <div className="sidebar__theme">
+                <button className="sidebar__theme--button">Theme</button>
             </div>
-            <figure>
+            <div className="sidebar__info">
                 <img
-                    style={{ borderRadius: "50%" }}
-                    width={100}
+                    className="sidebar__info--image"
                     src="/src/assets/profile_picture.jpeg"
                     alt=""
                 />
-            </figure>
-            <span>&#8226;</span>
-            <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Projects</li>
-                    <li>About</li>
+                <span className="sidebar__info--name">Emmanuel Lopez</span>
+                <span className="sidebar__info--location">
+                    New York City, NY
+                </span>
+            </div>
+            <span className="sidebar__bullet">&#8226;</span>
+            <nav className="sidebar__nav">
+                <ul className="sidebar__nav--list">
+                    <li className="sidebar__nav--item">Home</li>
+                    <li className="sidebar__nav--item">Projects</li>
+                    <li className="sidebar__nav--item">About</li>
                 </ul>
             </nav>
-            <span>&#8226;</span>
-            <div>SOCIAL MEDIA</div>
+            <span className="sidebar__bullet">&#8226;</span>
+            <div className="sidebar__social">
+                <IconLink
+                    href=""
+                    name="linkedin"
+                    size={24}
+                />
+                <IconLink
+                    href=""
+                    name="github"
+                    size={24}
+                />
+                <IconLink
+                    href=""
+                    name="bluesky"
+                    size={24}
+                />
+                <IconLink
+                    href=""
+                    name="xtwitter"
+                    size={24}
+                />
+            </div>
         </aside>
     );
 }

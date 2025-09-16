@@ -1,1 +1,1 @@
-{"version":3,"sources":["../src/scss/components/_sidebar.scss","../src/scss/global/_baseline.scss"],"names":[],"mappings":"AAAA,SACI,YAAA,CACA,qBAAA,CCFJ,mBAGI,QAAA,CACA,SAAA,CACA,qBAAA","file":"styles.css"}
+{"version":3,"sources":["../src/scss/components/_sidebar.scss","../src/scss/global/_baseline.scss"],"names":[],"mappings":"AAEA,SACI,2BAAA,CACA,iBAAA,CACA,cAAA,CACA,qBAAA,CACA,oBAAA,CCLJ,mBAGI,QAAA,CACA,SAAA,CACA,qBAAA,CAGJ,KACI,iBAAA,CACA,WAAA","file":"styles.css"}
