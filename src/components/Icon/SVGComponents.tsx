@@ -3,11 +3,13 @@ import { type SVGProps } from "react";
 interface SVGType extends SVGProps<SVGSVGElement> {
     fill: string;
     size: number | string;
+    className?: string;
 }
 
-export function Bluesky({ fill, size }: SVGType) {
+export function Bluesky({ fill, size, className }: SVGType) {
     return (
         <svg
+            className={className}
             width={size}
             height={size}
             viewBox="0 0 48 42"
@@ -19,9 +21,10 @@ export function Bluesky({ fill, size }: SVGType) {
     );
 }
 
-export function LinkedIn({ fill, size }: SVGType) {
+export function LinkedIn({ fill, size, className }: SVGType) {
     return (
         <svg
+            className={className}
             width={size}
             height={size}
             viewBox="0 0 48 48"
@@ -33,9 +36,10 @@ export function LinkedIn({ fill, size }: SVGType) {
     );
 }
 
-export function MoonCrescent({ size, fill }: SVGType) {
+export function MoonCrescent({ size, fill, className }: SVGType) {
     return (
         <svg
+            className={className}
             width={size}
             height={size}
             viewBox="0 0 24 24"
@@ -47,9 +51,10 @@ export function MoonCrescent({ size, fill }: SVGType) {
     );
 }
 
-export function Sun({ size, fill }: SVGType) {
+export function Sun({ size, fill, className }: SVGType) {
     return (
         <svg
+            className={className}
             width={size}
             height={size}
             viewBox="0 0 24 24"
@@ -61,9 +66,10 @@ export function Sun({ size, fill }: SVGType) {
     );
 }
 
-export function TikTok({ fill, size }: SVGType) {
+export function TikTok({ fill, size, className }: SVGType) {
     return (
         <svg
+            className={className}
             width={size}
             height={size}
             viewBox="0 0 41 48"
@@ -75,9 +81,10 @@ export function TikTok({ fill, size }: SVGType) {
     );
 }
 
-export function Github({ fill, size }: SVGType) {
+export function Github({ fill, size, className }: SVGType) {
     return (
         <svg
+            className={className}
             width={size}
             height={size}
             viewBox="0 0 48 48"
@@ -93,9 +100,10 @@ export function Github({ fill, size }: SVGType) {
     );
 }
 
-export function XTwitter({ fill, size }: SVGType) {
+export function XTwitter({ fill, size, className }: SVGType) {
     return (
         <svg
+            className={className}
             width={size}
             height={size}
             viewBox="0 0 44 41"

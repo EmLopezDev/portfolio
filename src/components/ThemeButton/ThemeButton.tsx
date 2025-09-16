@@ -30,8 +30,8 @@ function ThemeButton() {
     return (
         <div className="theme">
             <Icon
+                className="theme__sun"
                 name="sun"
-                size={26}
             />
             <input
                 id="theme"
@@ -42,8 +42,8 @@ function ThemeButton() {
                 onChange={() => setTheme()}
             />
             <Icon
+                className="theme__moon"
                 name="mooncrescent"
-                size={26}
             />
         </div>
     );
