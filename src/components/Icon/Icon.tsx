@@ -1,9 +1,19 @@
-import { Bluesky, Github, LinkedIn, TikTok, XTwitter } from "./SVGComponents";
+import {
+    Bluesky,
+    Github,
+    LinkedIn,
+    MoonCrescent,
+    Sun,
+    TikTok,
+    XTwitter,
+} from "./SVGComponents";
 
 const iconMap = {
     bluesky: Bluesky,
     github: Github,
     linkedin: LinkedIn,
+    mooncrescent: MoonCrescent,
+    sun: Sun,
     tiktok: TikTok,
     xtwitter: XTwitter,
 };
@@ -14,9 +24,15 @@ type IconType = {
     name: IconName;
     size?: number | string;
     color?: string;
+    className?: string;
 };
 
-export const Icon = ({ name, size = 16, color = "currentColor" }: IconType) => {
+export const Icon = ({
+    name,
+    size = 16,
+    color = "currentColor",
+    className,
+}: IconType) => {
     const IconComponent = iconMap[name];
 
     if (!IconComponent) {
@@ -26,6 +42,7 @@ export const Icon = ({ name, size = 16, color = "currentColor" }: IconType) => {
 
     return (
         <IconComponent
+            className={className}
             size={size}
             fill={color}
         />

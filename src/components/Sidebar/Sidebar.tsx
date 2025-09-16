@@ -1,10 +1,11 @@
 import { IconLink } from "../Icon/IconLink";
+import ThemeButton from "../ThemeButton/ThemeButton";
 
 function Sidebar() {
     return (
         <aside className="sidebar">
             <div className="sidebar__theme">
-                <button className="sidebar__theme--button">Theme</button>
+                <ThemeButton />
             </div>
             <div className="sidebar__info">
                 <img
