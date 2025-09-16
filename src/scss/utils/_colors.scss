@@ -1,8 +1,12 @@
 :root {
     // Background
-    --bg-dark: hsl(211 100% 91%);
-    --bg: hsl(211 100% 96%);
-    --bg-light: hsl(211 100% 100%);
+    --white-100: hsl(211 100% 100%);
+    --white-200: hsl(211 100% 96%);
+    --white-300: hsl(211 100% 91%);
+
+    --black-700: hsl(211 100% 7%);
+    --black-800: hsl(211 100% 9%);
+    --black-900: hsl(211 100% 0%);
     // Text
     --text: hsl(222 100% 7%);
     --text-muted: hsl(210 54% 29%);
@@ -19,4 +23,18 @@
     --warning: hsl(51 46% 30%);
     --success: hsl(150 37% 33%);
     --info: hsl(217 34% 43%);
+
+    --primary-bg-color: var(--white-200);
+    --secondary-bg-color: var(--white-100);
+    --terciary-bg-color: var(--white-300);
+
+    --primary-text-color: var(--text);
+
+    --primary-border-color: var(--border);
 }
+
+// .darkmode {
+//     --primary-bg-color: var(--black-800);
+//     --terciary-bg-color: var(--black-700);
+//     --primary-text-color: var(--white-200);
+// }

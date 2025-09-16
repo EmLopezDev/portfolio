@@ -1,7 +1,6 @@
 @use "../utils/" as u;
 
 .sidebar {
-    border-right: 1px solid black;
     height: 100dvh;
     width: u.rem(300);
     padding-inline: u.rem(40);
@@ -9,8 +8,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    background-color: var(--bg);
+    justify-content: space-between;
+    background-color: var(--terciary-bg-color);
+    color: var(--primary-text-color);
+    border-right: 1px solid var(--primary-border-color);
 
     &__theme {
         width: 100%;
@@ -26,7 +27,7 @@
         font-size: u.rem(18);
 
         &--image {
-            width: u.rem(200);
+            width: u.rem(180);
             border-radius: 50%;
         }
     }
@@ -39,7 +40,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: u.rem(28);
+        gap: u.rem(40);
         font-size: u.rem(24);
     }
 
