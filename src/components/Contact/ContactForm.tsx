@@ -1,32 +1,55 @@
-import React from "react";
-import { Icon } from "../Icon/Icon";
+import { useEffect, useState } from "react";
+import { stopPropagation } from "../../lib/functions";
+import IconButton from "../Icon/IconButton";
 
 type ContactFormType = {
-    setIsFormOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    isOpen: boolean;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function ContactForm({ setIsFormOpen }: ContactFormType) {
+function ContactForm({ isOpen, setIsOpen }: ContactFormType) {
+    const [showOverlay, setShowOverlay] = useState(false);
+    const [showForm, setShowForm] = useState(false);
+
+    const openForm = () => {
+        setShowOverlay(true);
+        setTimeout(() => {
+            setShowForm(true);
+        }, 150);
+    };
+
+    const hideForm = () => {
+        setShowForm(false);
+        setTimeout(() => {
+            setShowOverlay(false);
+            setIsOpen(false);
+        }, 250);
+    };
+
+    useEffect(() => {
+        if (isOpen) {
+            openForm();
+        } else {
+            hideForm();
+        }
+    }, [isOpen]);
+
     return (
         <aside
-            className="contact__form"
-            onClick={(e) => e.stopPropagation()}
+            className={`contact__overlay ${showOverlay ? "show" : ""}`}
+            onClick={hideForm}
         >
-            <button
-                style={{
-                    backgroundColor: "none",
-                    border: "none",
-                    display: "flex",
-                    justifyContent: "center",
-                    width: "50px",
-                }}
-                onClick={() => setIsFormOpen(false)}
+            <div
+                className={`contact__form ${showForm ? "open" : ""}`}
+                onClick={stopPropagation}
             >
-                <Icon
-                    name="close"
-                    color="black"
-                    size={32}
+                <IconButton
+                    className="contact__form--close"
+                    iconName="close"
+                    iconSize={28}
+                    onClick={hideForm}
                 />
-            </button>
+            </div>
         </aside>
     );
 }

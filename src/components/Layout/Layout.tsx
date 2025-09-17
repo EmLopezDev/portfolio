@@ -6,20 +6,19 @@ import ContactForm from "../Contact/ContactForm";
 
 function Layout() {
     const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
+
     return (
         <main className="app__container">
             <Sidebar />
             <div className="page__container">
                 <Outlet />
             </div>
-            <ContactButton setIsFormOpen={setIsFormOpen} />
+            <ContactButton setIsOpen={setIsFormOpen} />
             {isFormOpen && (
-                <div
-                    className="contact__overlay"
-                    onClick={() => setIsFormOpen(false)}
-                >
-                    <ContactForm setIsFormOpen={setIsFormOpen} />
-                </div>
+                <ContactForm
+                    isOpen={isFormOpen}
+                    setIsOpen={setIsFormOpen}
+                />
             )}
         </main>
     );

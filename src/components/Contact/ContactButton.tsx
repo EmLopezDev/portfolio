@@ -1,14 +1,14 @@
 import React from "react";
 
 type ContactButtonType = {
-    setIsFormOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function ContactButton({ setIsFormOpen }: ContactButtonType) {
+function ContactButton({ setIsOpen }: ContactButtonType) {
     return (
         <button
             className="contact__button"
-            onClick={() => setIsFormOpen(true)}
+            onClick={() => setIsOpen(true)}
         >
             Contact Me
         </button>

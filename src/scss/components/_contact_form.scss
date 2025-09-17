@@ -7,7 +7,12 @@
     width: 100%;
     z-index: 99;
     background-color: hsla(0, 0%, 10%, 0.8);
-    // display: none;
+    display: none;
+    cursor: pointer;
+
+    &.show {
+        display: block;
+    }
 }
 
 .contact__form {
@@ -15,11 +20,24 @@
     width: u.rem(400);
     position: fixed;
     top: 0;
-    right: 0;
+    right: -400px;
     background-color: var(--primary-bg-color);
-    padding-block: u.rem(24);
-    padding-inline: u.rem(28);
+    padding-block: u.rem(40);
+    padding-inline: u.rem(40);
     display: flex;
     flex-direction: column;
     transition: right 200ms ease-in-out;
+    cursor: default;
+
+    &.open {
+        right: 0;
+    }
+
+    &--close {
+        display: inline-block;
+        width: u.rem(32);
+        background-color: transparent;
+        border: none;
+        margin-left: auto;
+    }
 }
