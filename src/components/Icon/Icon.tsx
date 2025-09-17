@@ -1,5 +1,6 @@
 import {
     Bluesky,
+    Close,
     Github,
     LinkedIn,
     MoonCrescent,
@@ -10,6 +11,7 @@ import {
 
 const iconMap = {
     bluesky: Bluesky,
+    close: Close,
     github: Github,
     linkedin: LinkedIn,
     mooncrescent: MoonCrescent,

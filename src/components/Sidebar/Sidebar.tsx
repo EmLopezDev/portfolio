@@ -39,21 +39,25 @@ function Sidebar() {
                     href="http://www.linkedin.com/in/emmanuel-lopez-a812b0127"
                     name="linkedin"
                     size={24}
+                    target="_blank"
                 />
                 <IconLink
                     href=""
                     name="github"
                     size={24}
+                    target="_blank"
                 />
                 <IconLink
                     href=""
                     name="bluesky"
                     size={24}
+                    target="_blank"
                 />
                 <IconLink
                     href=""
                     name="xtwitter"
                     size={24}
+                    target="_blank"
                 />
             </div>
         </aside>
