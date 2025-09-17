@@ -26,6 +26,10 @@ function ContactForm({ isOpen, setIsOpen }: ContactFormType) {
         }, 250);
     };
 
+    const onSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+    };
+
     useEffect(() => {
         if (isOpen) {
             openForm();
@@ -40,15 +44,59 @@ function ContactForm({ isOpen, setIsOpen }: ContactFormType) {
             onClick={hideForm}
         >
             <div
-                className={`contact__form ${showForm ? "open" : ""}`}
+                className={`contact ${showForm ? "open" : ""}`}
                 onClick={stopPropagation}
             >
                 <IconButton
-                    className="contact__form--close"
+                    className="contact__close"
                     iconName="close"
                     iconSize={28}
                     onClick={hideForm}
                 />
+                <form
+                    className="contact__form"
+                    action=""
+                >
+                    <label
+                        className="contact__form--label"
+                        htmlFor="name"
+                    >
+                        Name
+                        <input
+                            id="name"
+                            className="contact__form--input"
+                            type="text"
+                        />
+                    </label>
+                    <label
+                        className="contact__form--label"
+                        htmlFor="email"
+                    >
+                        Email
+                        <input
+                            id="email"
+                            className="contact__form--input"
+                            type="email"
+                            placeholder=""
+                        />
+                    </label>
+                    <label
+                        className="contact__form--label"
+                        htmlFor="message"
+                    >
+                        Message
+                        <textarea
+                            id="message"
+                            className="contact__form--input"
+                        ></textarea>
+                    </label>
+                    <button
+                        className="contact__form--submit"
+                        onClick={onSubmit}
+                    >
+                        SUBMIT
+                    </button>
+                </form>
             </div>
         </aside>
     );

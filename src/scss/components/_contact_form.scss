@@ -15,13 +15,14 @@
     }
 }
 
-.contact__form {
+.contact {
     height: 100%;
     width: u.rem(400);
     position: fixed;
     top: 0;
     right: -400px;
-    background-color: var(--primary-bg-color);
+    background-color: var(--terciary-bg-color);
+    color: var(--primary-text-color);
     padding-block: u.rem(40);
     padding-inline: u.rem(40);
     display: flex;
@@ -33,11 +34,41 @@
         right: 0;
     }
 
-    &--close {
+    &__close {
         display: inline-block;
         width: u.rem(32);
         background-color: transparent;
+        color: var(--primary-text-color);
         border: none;
-        margin-left: auto;
+        margin-inline-start: auto;
+        margin-block-end: u.rem(40);
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: u.rem(24);
+
+        &--label {
+            display: flex;
+            flex-direction: column;
+            gap: u.rem(8);
+            color: var(--primary-text-color);
+        }
+
+        &--input {
+            height: u.rem(40);
+            border-radius: u.rem(4);
+            border: none;
+            background-color: var(--white-200);
+        }
+
+        &--submit {
+            height: u.rem(40);
+            border-radius: u.rem(4);
+            color: var(--white-200);
+            border: 1px solid var(--border);
+            background-color: var(--primary);
+        }
     }
 }
