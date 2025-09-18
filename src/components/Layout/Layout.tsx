@@ -4,9 +4,12 @@ import Sidebar from "../Sidebar/Sidebar";
 import ContactButton from "../Contact/ContactButton";
 import ContactForm from "../Contact/ContactForm";
 import Toast from "../Toast/Toast";
+import { useToast } from "../Toast/useToast";
 
 function Layout() {
     const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
+    const { showToast, setShowToast, onCloseToast } = useToast();
+    console.log(showToast);
 
     return (
         <main className="app__container">
@@ -19,9 +22,13 @@ function Layout() {
                 <ContactForm
                     isOpen={isFormOpen}
                     setIsOpen={setIsFormOpen}
+                    handleShowToast={setShowToast}
                 />
             )}
-            <Toast />
+            <Toast
+                toast={showToast}
+                handleCloseToast={onCloseToast}
+            />
         </main>
     );
 }

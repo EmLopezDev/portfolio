@@ -12,6 +12,7 @@ $toast-width: u.rem(350);
     border-radius: u.rem(20);
     padding-inline: u.rem(20);
     padding-block: u.rem(20);
+    z-index: 999;
 
     &.success {
         background-color: var(--success);

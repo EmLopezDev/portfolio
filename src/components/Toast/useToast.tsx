@@ -1,16 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { type Status } from "./Toast";
 
+export type ShowToastType = {
+    show: boolean;
+    type: Status | null;
+};
+
 export function useToast() {
-    const [showToast, setShowToast] = useState<Status | null>("warning");
+    const [showToast, setShowToast] = useState<ShowToastType>({
+        show: false,
+        type: null,
+    });
 
     const onCloseToast = () => {
-        setShowToast(null);
+        setShowToast({ show: false, type: null });
     };
 
-    useEffect(() => {
-        setShowToast(showToast);
-    }, [showToast]);
-
-    return { onCloseToast, showToast };
+    return { onCloseToast, showToast, setShowToast };
 }

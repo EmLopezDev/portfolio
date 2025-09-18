@@ -2,13 +2,15 @@ import { useEffect, useState, useRef } from "react";
 import { stopPropagation } from "../../lib/functions";
 import emailjs from "@emailjs/browser";
 import IconButton from "../Icon/IconButton";
+import type { ShowToastType } from "../Toast/useToast";
 
 type ContactFormType = {
     isOpen: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    handleShowToast: React.Dispatch<React.SetStateAction<ShowToastType>>;
 };
 
-function ContactForm({ isOpen, setIsOpen }: ContactFormType) {
+function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
     const [showOverlay, setShowOverlay] = useState(false);
     const [showForm, setShowForm] = useState(false);
     const [nameValue, setNameValue] = useState<string | null>(null);
@@ -73,7 +75,8 @@ function ContactForm({ isOpen, setIsOpen }: ContactFormType) {
 
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        sendEmail();
+        handleShowToast({ show: true, type: "success" });
+        // sendEmail();
     };
 
     useEffect(() => {

@@ -1,7 +1,7 @@
-import { useEffect, useState, type JSX } from "react";
+import { type JSX } from "react";
 import { Icon } from "../Icon/Icon";
 import IconButton from "../Icon/IconButton";
-import { useToast } from "./useToast";
+import type { ShowToastType } from "./useToast";
 
 export type Status = "success" | "failure" | "warning";
 
@@ -13,9 +13,12 @@ type ToastOptionsType = {
     };
 };
 
-function Toast() {
-    const [toastType, setToastType] = useState<Status | null>(null);
-    const { showToast, onCloseToast } = useToast();
+type ToastType = {
+    toast: ShowToastType;
+    handleCloseToast: () => void;
+};
+
+function Toast({ toast, handleCloseToast }: ToastType) {
     const toastOptions: ToastOptionsType = {
         success: {
             icon: (
@@ -53,32 +56,28 @@ function Toast() {
         },
     };
 
-    const toastOption = showToast && toastOptions[showToast];
-
-    useEffect(() => {
-        setToastType(showToast);
-    }, [showToast]);
+    const toastOption = toast.type && toastOptions[toast.type];
 
     return (
         toastOption && (
             <dialog
-                className={`toast__container ${showToast}`}
+                className={`toast__container ${toastOption?.status}`}
                 open
             >
                 <IconButton
                     className="toast__container--close"
                     iconName="close"
                     iconSize={24}
-                    onClick={onCloseToast}
+                    onClick={handleCloseToast}
                 />
                 <div className="toast">
                     <div className="toast__header">
-                        {toastOption.icon}
+                        {toastOption?.icon}
                         <span className="toast__header--status">
-                            {toastOption.status}
+                            {toastOption?.status}
                         </span>
                     </div>
-                    <div className="toast__message">{toastOption.message}</div>
+                    <div className="toast__message">{toastOption?.message}</div>
                 </div>
             </dialog>
         )
