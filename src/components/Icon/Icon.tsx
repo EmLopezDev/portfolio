@@ -1,5 +1,9 @@
+import type { JSX } from "react";
 import {
     Bluesky,
+    CircleCheckFilled,
+    CircleExclamationFilled,
+    CircleXFilled,
     Close,
     Github,
     LinkedIn,
@@ -11,6 +15,9 @@ import {
 
 const iconMap = {
     bluesky: Bluesky,
+    circleCheckFilled: CircleCheckFilled,
+    circleExclamationFilled: CircleExclamationFilled,
+    circleXFilled: CircleXFilled,
     close: Close,
     github: Github,
     linkedin: LinkedIn,

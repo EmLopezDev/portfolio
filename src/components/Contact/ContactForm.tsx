@@ -46,7 +46,9 @@ function ContactForm({ isOpen, setIsOpen }: ContactFormType) {
                     formRef.current,
                     PUBLIC_KEY
                 );
-                console.log(email.status);
+                if (email.status === 200) {
+                    formRef.current.reset();
+                }
             } catch (error) {
                 console.error(error);
             }
@@ -151,9 +153,10 @@ function ContactForm({ isOpen, setIsOpen }: ContactFormType) {
                         Message
                         <textarea
                             id="message"
-                            className="contact__form--input"
+                            className="contact__form--text-area"
                             name="message"
                             onChange={onMessageChange}
+                            cols={1}
                         ></textarea>
                     </label>
                     <button className="contact__form--submit">SUBMIT</button>

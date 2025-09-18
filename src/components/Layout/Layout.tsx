@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
 import ContactButton from "../Contact/ContactButton";
 import ContactForm from "../Contact/ContactForm";
+import Toast from "../Toast/Toast";
 
 function Layout() {
     const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
@@ -20,6 +21,7 @@ function Layout() {
                     setIsOpen={setIsFormOpen}
                 />
             )}
+            <Toast />
         </main>
     );
 }

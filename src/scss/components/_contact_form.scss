@@ -63,6 +63,15 @@
             border: none;
             background-color: var(--white-200);
         }
+        &--text-area {
+            height: u.rem(150);
+            border-radius: u.rem(4);
+            border: none;
+            background-color: var(--white-200);
+            resize: none;
+            padding-inline: u.rem(20);
+            padding-block: u.rem(20);
+        }
 
         &--submit {
             height: u.rem(40);

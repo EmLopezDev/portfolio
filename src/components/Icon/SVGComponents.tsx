@@ -21,6 +21,59 @@ export function Bluesky({ fill, size, className }: SVGType) {
     );
 }
 
+export function CircleCheckFilled({ fill, size, className }: SVGType) {
+    return (
+        <svg
+            className={className}
+            width={size}
+            height={size}
+            xmlns="http://www.w3.org/2000/svg"
+            fill={fill}
+            viewBox="0 0 24 24"
+        >
+            <path
+                fillRule="evenodd"
+                d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11s11-4.925 11-11S18.075 1 12 1Zm4.768 9.14a1 1 0 1 0-1.536-1.28l-4.3 5.159l-2.225-2.226a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.475-.067l5-6Z"
+                clipRule="evenodd"
+            />
+        </svg>
+    );
+}
+
+export function CircleExclamationFilled({ fill, size, className }: SVGType) {
+    return (
+        <svg
+            className={className}
+            width={size}
+            height={size}
+            xmlns="http://www.w3.org/2000/svg"
+            fill={fill}
+            viewBox="0 0 16 16"
+        >
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2a1 1 0 0 0 0-2z" />
+        </svg>
+    );
+}
+
+export function CircleXFilled({ fill, size, className }: SVGType) {
+    return (
+        <svg
+            className={className}
+            width={size}
+            height={size}
+            xmlns="http://www.w3.org/2000/svg"
+            fill={fill}
+            viewBox="0 0 24 24"
+        >
+            <path
+                fillRule="evenodd"
+                d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11s11-4.925 11-11S18.075 1 12 1Zm3.707 8.707a1 1 0 0 0-1.414-1.414L12 10.586L9.707 8.293a1 1 0 1 0-1.414 1.414L10.586 12l-2.293 2.293a1 1 0 1 0 1.414 1.414L12 13.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 12l2.293-2.293Z"
+                clipRule="evenodd"
+            />
+        </svg>
+    );
+}
+
 export function Close({ fill, size, className }: SVGType) {
     return (
         <svg
