@@ -48,18 +48,17 @@
         color: var(--primary-text-color);
         border: none;
         margin-inline-start: auto;
-        margin-block-end: u.rem(40);
+        margin-block-end: u.rem(12);
     }
 
     &__form {
         display: flex;
         flex-direction: column;
-        gap: u.rem(24);
+        // gap: u.rem(16);
 
         &--label {
             display: flex;
             flex-direction: column;
-            gap: u.rem(8);
             color: var(--primary-text-color);
             font-size: u.rem(18);
         }
@@ -71,15 +70,19 @@
             background-color: var(--white-200);
             padding-inline: u.rem(20);
             padding-block: u.rem(20);
+            margin-block-start: u.rem(8);
+            margin-block-end: u.rem(4);
         }
         &--text-area {
-            height: u.rem(200);
+            height: u.rem(150);
             border-radius: u.rem(4);
             border: none;
             background-color: var(--white-200);
             resize: none;
             padding-inline: u.rem(20);
             padding-block: u.rem(20);
+            margin-block-start: u.rem(8);
+            margin-block-end: u.rem(4);
         }
 
         &--submit {
@@ -88,6 +91,13 @@
             color: var(--white-200);
             border: 1px solid var(--border);
             background-color: var(--primary);
+            margin-block-start: u.rem(8);
+        }
+
+        & span {
+            margin-block-end: u.rem(8);
+            height: u.rem(25);
+            color: darkred;
         }
     }
 }

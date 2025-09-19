@@ -1,7 +1,8 @@
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { stopPropagation } from "../../lib/event.utils";
 import emailjs from "@emailjs/browser";
 import IconButton from "../Icon/IconButton";
+import Loader from "../Loader/Loader";
 import type { ShowToastType } from "../Toast/useToast";
 import { emailCheck, nameCheck } from "../../lib/string.utils";
 
@@ -14,10 +15,18 @@ type ContactFormType = {
 function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
     const [showOverlay, setShowOverlay] = useState(false);
     const [showForm, setShowForm] = useState(false);
-    const [nameValue, setNameValue] = useState<string>("");
-    const [emailValue, setEmailValue] = useState<string>("");
-    const [subjectValue, setSubjectValue] = useState<string>("");
-    const [messageValue, setMessageValue] = useState<string>("");
+
+    const [nameValue, setNameValue] = useState("");
+    const [emailValue, setEmailValue] = useState("");
+    const [subjectValue, setSubjectValue] = useState("");
+    const [messageValue, setMessageValue] = useState("");
+
+    const [nameError, setNameError] = useState("");
+    const [emailError, setEmailError] = useState("");
+    const [subjectError, setSubjectError] = useState("");
+    const [messageError, setMessageError] = useState("");
+
+    const [isSending, setIsSending] = useState(false);
 
     const SERVICE_ID = import.meta.env.VITE_EMAIL_SERVICE_ID;
     const TEMPLATE_ID = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
@@ -40,30 +49,58 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
         }, 250);
     };
 
-    const sendEmail = async () => {
-        if (formRef.current) {
-            try {
-                const email = await emailjs.sendForm(
-                    SERVICE_ID,
-                    TEMPLATE_ID,
-                    formRef.current,
-                    PUBLIC_KEY
-                );
-                if (email.status === 200) {
-                    handleShowToast({ show: true, type: "success" });
-                    formRef.current.reset();
-                    hideForm();
-                }
-            } catch (error) {
-                handleShowToast({ show: true, type: "failure" });
-                console.error(error);
-            }
+    const isNameValid = nameCheck(nameValue);
+    const isEmailValid = emailCheck(emailValue);
+
+    const showNameErrors = () => {
+        if (!nameValue) {
+            setNameError("Missing Name");
+        } else if (!isNameValid) {
+            setNameError("Invalid Name");
+        } else {
+            setNameError("");
         }
     };
 
+    const showEmailErrors = () => {
+        if (!emailValue) {
+            setEmailError("Missing Email");
+        } else if (!isEmailValid) {
+            setEmailError("Invalid Email");
+        } else {
+            setEmailError("");
+        }
+    };
+
+    const showSubjectErrors = () => {
+        if (!subjectValue) {
+            setSubjectError("Missing Subject");
+        } else {
+            setSubjectError("");
+        }
+    };
+
+    const showMessageErrors = () => {
+        if (!messageValue) {
+            setMessageError("Missing Message");
+        } else {
+            setMessageError("");
+        }
+    };
+
+    const showErrors = () => {
+        showNameErrors();
+        showEmailErrors();
+        showSubjectErrors();
+        showMessageErrors();
+    };
+
     const formValidation = () => {
-        const isNameValid = nameCheck(nameValue);
-        console.log(isNameValid);
+        if (isNameValid && isEmailValid && subjectValue && messageValue) {
+            return true;
+        }
+        showErrors();
+        return false;
     };
 
     const onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,10 +119,35 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
         setMessageValue(e.target.value.trim());
     };
 
+    const sendEmail = async () => {
+        if (formRef.current) {
+            setIsSending(true);
+            try {
+                const email = await emailjs.sendForm(
+                    SERVICE_ID,
+                    TEMPLATE_ID,
+                    formRef.current,
+                    PUBLIC_KEY
+                );
+                if (email.status === 200) {
+                    handleShowToast({ show: true, type: "success" });
+                    formRef.current.reset();
+                    hideForm();
+                }
+            } catch (error) {
+                handleShowToast({ show: true, type: "failure" });
+                console.error(error);
+            } finally {
+                setIsSending(false);
+            }
+        }
+    };
+
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        formValidation();
-        // sendEmail();
+        if (formValidation()) {
+            sendEmail();
+        }
     };
 
     useEffect(() => {
@@ -116,6 +178,7 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
                     className="contact__form"
                     action=""
                     onSubmit={onSubmit}
+                    noValidate
                 >
                     <label
                         className="contact__form--label"
@@ -129,6 +192,7 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
                             name="name"
                             onChange={onNameChange}
                         />
+                        <span>{nameError}</span>
                     </label>
                     <label
                         className="contact__form--label"
@@ -143,6 +207,7 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
                             placeholder="example@gmail.com"
                             onChange={onEmailChange}
                         />
+                        <span>{emailError}</span>
                     </label>
                     <label
                         className="contact__form--label"
@@ -157,6 +222,7 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
                             placeholder=""
                             onChange={onSubjectChange}
                         />
+                        <span>{subjectError}</span>
                     </label>
                     <label
                         className="contact__form--label"
@@ -170,8 +236,11 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
                             onChange={onMessageChange}
                             placeholder="Please write a brief message as to what you would like us to chat about"
                         ></textarea>
+                        <span>{messageError}</span>
                     </label>
-                    <button className="contact__form--submit">SUBMIT</button>
+                    <button className="contact__form--submit">
+                        {isSending ? <Loader size="small" /> : "Submit"}
+                    </button>
                 </form>
             </div>
         </aside>

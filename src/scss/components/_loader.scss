@@ -1,0 +1,112 @@
+@use "../utils/" as u;
+
+.loader__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: u.rem(8);
+
+    &--text {
+        color: white;
+        line-height: 100%;
+        letter-spacing: u.rem(1);
+
+        &.small {
+            font-size: u.rem(18);
+        }
+
+        &.medium {
+            font-size: u.rem(24);
+        }
+
+        &.large {
+            font-size: u.rem(32);
+        }
+    }
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__spinning {
+        border-color: #f3f3f3;
+        border-top-color: #3498db;
+        border-style: solid;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+
+        &.small {
+            border-width: u.rem(3);
+            width: u.rem(30);
+            height: u.rem(30);
+        }
+        &.medium {
+            border-width: u.rem(5);
+            width: u.rem(50);
+            height: u.rem(50);
+        }
+        &.large {
+            border-width: u.rem(7);
+            width: u.rem(70);
+            height: u.rem(70);
+        }
+    }
+
+    &__dot {
+        display: flex;
+        background-color: #f3f3f3;
+        border-radius: 50%;
+        animation: bounce 1.4s ease-in-out both infinite;
+
+        &.small {
+            width: u.rem(8);
+            height: u.rem(8);
+        }
+
+        &.medium {
+            width: u.rem(12);
+            height: u.rem(12);
+        }
+
+        &.large {
+            width: u.rem(16);
+            height: u.rem(16);
+        }
+
+        &:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        &:nth-child(2) {
+            animation-delay: -0.16s;
+            margin-inline: u.rem(12);
+        }
+
+        &:nth-child(3) {
+            animation-delay: 0s;
+        }
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    80%,
+    100% {
+        transform: scale(0); /* Start and end small */
+    }
+    40% {
+        transform: scale(1); /* Bounce up to full size */
+    }
+}
