@@ -1,6 +1,7 @@
 import { IconLink } from "../Icon/IconLink";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ThemeButton from "../ThemeButton/ThemeButton";
+import Nav from "../Nav/Nav";
 
 function Sidebar() {
     return (
@@ -20,19 +21,7 @@ function Sidebar() {
                 </span>
             </div>
             <span className="sidebar__bullet">&#8226;</span>
-            <nav className="sidebar__nav">
-                <ul className="sidebar__nav--list">
-                    <li className="sidebar__nav--item">
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li className="sidebar__nav--item">
-                        <Link to="/projects">Projects</Link>
-                    </li>
-                    <li className="sidebar__nav--item">
-                        <Link to="/about">About</Link>
-                    </li>
-                </ul>
-            </nav>
+            <Nav />
             <span className="sidebar__bullet">&#8226;</span>
             <div className="sidebar__social">
                 <IconLink
@@ -42,19 +31,19 @@ function Sidebar() {
                     target="_blank"
                 />
                 <IconLink
-                    href=""
+                    href="https://github.com/EmLopezDev"
                     name="github"
                     size={24}
                     target="_blank"
                 />
                 <IconLink
-                    href=""
+                    href="https://bsky.app/profile/emlopezdev.bsky.social"
                     name="bluesky"
                     size={24}
                     target="_blank"
                 />
                 <IconLink
-                    href=""
+                    href="https://x.com/emlopezdev"
                     name="xtwitter"
                     size={24}
                     target="_blank"

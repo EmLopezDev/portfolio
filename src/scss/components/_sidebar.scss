@@ -36,14 +36,6 @@
         font-size: u.rem(24);
     }
 
-    &__nav--list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: u.rem(40);
-        font-size: u.rem(24);
-    }
-
     &__social {
         display: grid;
         grid-template-columns: 1fr 1fr;
