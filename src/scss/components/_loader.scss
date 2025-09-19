@@ -8,7 +8,7 @@
     gap: u.rem(8);
 
     &--text {
-        color: white;
+        color: inherit;
         line-height: 100%;
         letter-spacing: u.rem(1);
 
@@ -32,7 +32,7 @@
     justify-content: center;
 
     &__spinning {
-        border-color: #f3f3f3;
+        border-color: #ebe9e9;
         border-top-color: #3498db;
         border-style: solid;
         border-radius: 50%;
