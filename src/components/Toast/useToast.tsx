@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { type Status } from "./Toast";
 
 export type ShowToastType = {
@@ -15,6 +15,14 @@ export function useToast() {
     const onCloseToast = () => {
         setShowToast({ show: false, type: null });
     };
+
+    useEffect(() => {
+        if (showToast.show) {
+            setTimeout(() => {
+                onCloseToast();
+            }, 3000);
+        }
+    }, [showToast]);
 
     return { onCloseToast, showToast, setShowToast };
 }

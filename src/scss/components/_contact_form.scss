@@ -29,6 +29,13 @@
     flex-direction: column;
     transition: right 200ms ease-in-out;
     cursor: default;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     &.open {
         right: 0;
@@ -62,9 +69,11 @@
             border-radius: u.rem(4);
             border: none;
             background-color: var(--white-200);
+            padding-inline: u.rem(20);
+            padding-block: u.rem(20);
         }
         &--text-area {
-            height: u.rem(150);
+            height: u.rem(200);
             border-radius: u.rem(4);
             border: none;
             background-color: var(--white-200);

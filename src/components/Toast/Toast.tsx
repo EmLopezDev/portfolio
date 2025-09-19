@@ -61,7 +61,7 @@ function Toast({ toast, handleCloseToast }: ToastType) {
     return (
         toastOption && (
             <dialog
-                className={`toast__container ${toastOption?.status}`}
+                className={`toast__container ${toastOption.status}`}
                 open
             >
                 <IconButton
@@ -72,12 +72,12 @@ function Toast({ toast, handleCloseToast }: ToastType) {
                 />
                 <div className="toast">
                     <div className="toast__header">
-                        {toastOption?.icon}
+                        {toastOption.icon}
                         <span className="toast__header--status">
-                            {toastOption?.status}
+                            {toastOption.status}
                         </span>
                     </div>
-                    <div className="toast__message">{toastOption?.message}</div>
+                    <div className="toast__message">{toastOption.message}</div>
                 </div>
             </dialog>
         )

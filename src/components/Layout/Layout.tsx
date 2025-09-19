@@ -9,7 +9,6 @@ import { useToast } from "../Toast/useToast";
 function Layout() {
     const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
     const { showToast, setShowToast, onCloseToast } = useToast();
-    console.log(showToast);
 
     return (
         <main className="app__container">

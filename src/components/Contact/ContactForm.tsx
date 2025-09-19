@@ -1,8 +1,9 @@
 import { useEffect, useState, useRef } from "react";
-import { stopPropagation } from "../../lib/functions";
+import { stopPropagation } from "../../lib/event.utils";
 import emailjs from "@emailjs/browser";
 import IconButton from "../Icon/IconButton";
 import type { ShowToastType } from "../Toast/useToast";
+import { emailCheck, nameCheck } from "../../lib/string.utils";
 
 type ContactFormType = {
     isOpen: boolean;
@@ -13,10 +14,10 @@ type ContactFormType = {
 function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
     const [showOverlay, setShowOverlay] = useState(false);
     const [showForm, setShowForm] = useState(false);
-    const [nameValue, setNameValue] = useState<string | null>(null);
-    const [emailValue, setEmailValue] = useState<string | null>(null);
-    const [subjectValue, setSubjectValue] = useState<string | null>(null);
-    const [messageValue, setMessageValue] = useState<string | null>(null);
+    const [nameValue, setNameValue] = useState<string>("");
+    const [emailValue, setEmailValue] = useState<string>("");
+    const [subjectValue, setSubjectValue] = useState<string>("");
+    const [messageValue, setMessageValue] = useState<string>("");
 
     const SERVICE_ID = import.meta.env.VITE_EMAIL_SERVICE_ID;
     const TEMPLATE_ID = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
@@ -49,33 +50,41 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
                     PUBLIC_KEY
                 );
                 if (email.status === 200) {
+                    handleShowToast({ show: true, type: "success" });
                     formRef.current.reset();
+                    hideForm();
                 }
             } catch (error) {
+                handleShowToast({ show: true, type: "failure" });
                 console.error(error);
             }
         }
     };
 
+    const formValidation = () => {
+        const isNameValid = nameCheck(nameValue);
+        console.log(isNameValid);
+    };
+
     const onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setNameValue(e.target.value);
+        setNameValue(e.target.value.trim());
     };
 
     const onEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setEmailValue(e.target.value);
+        setEmailValue(e.target.value.trim());
     };
 
     const onSubjectChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSubjectValue(e.target.value);
+        setSubjectValue(e.target.value.trim());
     };
 
     const onMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setMessageValue(e.target.value);
+        setMessageValue(e.target.value.trim());
     };
 
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        handleShowToast({ show: true, type: "success" });
+        formValidation();
         // sendEmail();
     };
 
@@ -131,7 +140,7 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
                             className="contact__form--input"
                             type="email"
                             name="email"
-                            placeholder=""
+                            placeholder="example@gmail.com"
                             onChange={onEmailChange}
                         />
                     </label>
@@ -159,7 +168,7 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
                             className="contact__form--text-area"
                             name="message"
                             onChange={onMessageChange}
-                            cols={1}
+                            placeholder="Please write a brief message as to what you would like us to chat about"
                         ></textarea>
                     </label>
                     <button className="contact__form--submit">SUBMIT</button>

@@ -1,7 +1,7 @@
 @use "../utils/" as u;
 
 .sidebar {
-    height: 100dvh;
+    min-height: 100%;
     width: u.rem(300);
     padding-inline: u.rem(40);
     padding-block: u.rem(40);
