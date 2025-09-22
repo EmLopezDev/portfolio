@@ -7,6 +7,7 @@
         align-items: center;
         gap: u.rem(40);
         font-size: u.rem(24);
+        color: var(--secondary-text-color);
 
         &--item {
             display: flex;
@@ -15,13 +16,15 @@
             padding: 12px;
 
             &:hover {
-                background-color: white;
+                background-color: var(--terciary-bg-color);
                 border-radius: u.rem(8);
+                color: var(--primary-text-color-hover);
             }
 
             &.active {
-                background-color: white;
+                background-color: var(--terciary-bg-color);
                 border-radius: u.rem(8);
+                color: var(--primary-text-color-hover);
             }
         }
     }

@@ -1,40 +1,37 @@
 :root {
-    // Background
-    --white-100: hsl(211 100% 100%);
-    --white-200: hsl(211 100% 96%);
-    --white-300: hsl(211 100% 91%);
+    --ghost-white: hsla(240, 100%, 99%, 1);
+    --periwinkle: hsla(257, 100%, 93%, 1);
+    --yinmn-blue: hsla(224, 24%, 37%, 1);
+    --delft-blue: hsla(228, 46%, 28%, 1);
+    --space-cadet: hsla(227, 42%, 20%, 1);
 
-    --black-700: hsl(211 100% 7%);
-    --black-800: hsl(211 100% 9%);
-    --black-900: hsl(211 100% 0%);
-    // Text
-    --text: hsl(222 100% 7%);
-    --text-muted: hsl(210 54% 29%);
-    // Unsure
-    --highlight: hsl(211 100% 100%);
-    // Borders
-    --border: hsl(210 34% 52%);
-    --border-muted: hsl(211 47% 64%);
-    // Buttons
-    --primary: hsl(208 74% 28%);
-    --secondary: hsl(38 100% 17%);
-    // Alerts
-    --danger: hsl(8 32% 41%);
-    --warning: hsl(51 46% 30%);
-    --success: hsl(150 37% 33%);
-    --info: hsl(217 34% 43%);
+    --red-ncs: hsla(354, 64%, 43%, 1);
 
-    --primary-bg-color: var(--white-200);
-    --secondary-bg-color: var(--white-100);
-    --terciary-bg-color: var(--border-muted);
+    --primary-bg-color: var(--ghost-white);
+    --secondary-bg-color: var(--yinmn-blue);
+    --terciary-bg-color: var(--delft-blue);
 
-    --primary-text-color: var(--text);
+    --primary-text-color: var(--space-cadet);
+    --secondary-text-color: var(--ghost-white);
 
-    --primary-border-color: var(--border);
+    --primary-text-color-hover: var(--ghost-white);
+
+    --primary-border-color: var(--delft-blue);
+
+    --secondary-focus-color: var(--periwinkle);
+
+    --primary-button-bg-color: var(--delft-blue);
 }
 
 .darkmode {
-    --primary-bg-color: var(--black-800);
-    --terciary-bg-color: var(--black-700);
-    --primary-text-color: var(--white-200);
+    --primary-bg-color: var(--delft-blue);
+    --secondary-bg-color: var(--space-cadet);
+    --terciary-bg-color: var(--periwinkle);
+
+    --primary-text-color: var(--ghost-white);
+    --primary-text-color-hover: var(--space-cadet);
+
+    --primary-border-color: var(--yinmn-blue);
+
+    --primary-button-bg-color: var(--space-cadet);
 }

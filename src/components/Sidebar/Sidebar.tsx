@@ -1,5 +1,4 @@
 import { IconLink } from "../Icon/IconLink";
-import { Link, useLocation } from "react-router-dom";
 import ThemeButton from "../ThemeButton/ThemeButton";
 import Nav from "../Nav/Nav";
 
@@ -12,7 +11,7 @@ function Sidebar() {
             <div className="sidebar__info">
                 <img
                     className="sidebar__info--image"
-                    src="/src/assets/profile_picture.jpeg"
+                    src="/src/assets/images/profile_picture.jpeg"
                     alt=""
                 />
                 <span className="sidebar__info--name">Emmanuel Lopez</span>

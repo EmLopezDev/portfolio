@@ -9,9 +9,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--terciary-bg-color);
-    color: var(--primary-text-color);
-    border-right: 1px solid var(--primary-border-color);
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-text-color);
 
     &__theme {
         width: 100%;
