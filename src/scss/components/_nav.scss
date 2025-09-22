@@ -1,19 +1,21 @@
 @use "../utils/" as u;
 
 .nav {
+    width: 100%;
     &__list {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: u.rem(40);
+        gap: u.rem(24);
         font-size: u.rem(24);
         color: var(--secondary-text-color);
 
         &--item {
+            width: 100%;
             display: flex;
+            justify-content: center;
             line-height: 100%;
             letter-spacing: u.rem(0.8);
-            padding: 12px;
+            padding: u.rem(20);
 
             &:hover {
                 background-color: var(--terciary-bg-color);

@@ -7,8 +7,13 @@ function NavItem({ path, pathName }: Omit<NavDataType, "id">) {
     const location = useLocation();
     const active = location.pathname === path;
     return (
-        <li className={`nav__list--item ${active ? "active" : ""}`}>
-            <Link to={path}>{capitalize(pathName)}</Link>
+        <li>
+            <Link
+                className={`nav__list--item ${active ? "active" : ""}`}
+                to={path}
+            >
+                {capitalize(pathName)}
+            </Link>
         </li>
     );
 }
