@@ -39,5 +39,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: u.rem(18);
+
+        &--item {
+            display: flex;
+            align-items: center;
+        }
     }
 }

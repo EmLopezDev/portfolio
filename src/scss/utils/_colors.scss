@@ -1,37 +1,42 @@
 :root {
-    --ghost-white: hsla(240, 100%, 99%, 1);
-    --periwinkle: hsla(257, 100%, 93%, 1);
-    --yinmn-blue: hsla(224, 24%, 37%, 1);
-    --delft-blue: hsla(228, 46%, 28%, 1);
-    --space-cadet: hsla(227, 42%, 20%, 1);
+    --rich-black: hsl(211, 53%, 11%);
+    --oxford-blue: hsl(219, 37%, 17%);
+    --delft-blue: hsl(228, 90%, 47%);
+    --yinmn-blue: hsl(212, 29%, 36%);
+    --silver-lake-blue: hsl(214, 23%, 56%);
+    --platinum: hsl(75, 6%, 89%);
+    --platinum-white: hsl(75, 6%, 100%);
+    --auburn: hsl(0, 59%, 41%);
+    --shamrock: hsl(156, 100%, 31%);
+    --gold: hsl(43, 74%, 45%);
 
-    --red-ncs: hsla(354, 64%, 43%, 1);
+    --primary-bg-color: var(--platinum);
+    --secondary-bg-color: var(--silver-lake-blue);
+    --terciary-bg-color: var(--yinmn-blue);
+    --overlay-bg-color: hsla(211, 53%, 11%, 0.7);
 
-    --primary-bg-color: var(--ghost-white);
-    --secondary-bg-color: var(--yinmn-blue);
-    --terciary-bg-color: var(--delft-blue);
+    --primary-text-color: var(--rich-black);
+    --secondary-text-color: var(--platinum-white);
 
-    --primary-text-color: var(--space-cadet);
-    --secondary-text-color: var(--ghost-white);
+    --primary-border-color: var(--oxford-blue);
 
-    --primary-text-color-hover: var(--ghost-white);
+    --focus-color: var(--delft-blue);
 
-    --primary-border-color: var(--delft-blue);
+    --primary-button-bg-color: var(--yinmn-blue);
 
-    --secondary-focus-color: var(--periwinkle);
-
-    --primary-button-bg-color: var(--delft-blue);
+    --success: var(--shamrock);
+    --danger: var(--auburn);
+    --warning: var(--gold);
 }
 
 .darkmode {
-    --primary-bg-color: var(--delft-blue);
-    --secondary-bg-color: var(--space-cadet);
-    --terciary-bg-color: var(--periwinkle);
+    --primary-bg-color: var(--oxford-blue);
+    --secondary-bg-color: var(--rich-black);
+    --terciary-bg-color: var(--silver-lake-blue);
 
-    --primary-text-color: var(--ghost-white);
-    --primary-text-color-hover: var(--space-cadet);
+    --primary-text-color: var(--platinum);
 
     --primary-border-color: var(--yinmn-blue);
 
-    --primary-button-bg-color: var(--space-cadet);
+    --primary-button-bg-color: var(--silver-lake-blue);
 }

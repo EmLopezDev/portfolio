@@ -25,7 +25,7 @@ function Toast({ toast, handleCloseToast }: ToastType) {
                 <Icon
                     name="circleCheckFilled"
                     color="green"
-                    size={24}
+                    size={26}
                 />
             ),
             status: "success",
@@ -37,7 +37,7 @@ function Toast({ toast, handleCloseToast }: ToastType) {
                 <Icon
                     name="circleXFilled"
                     color="red"
-                    size={24}
+                    size={26}
                 />
             ),
             status: "failure",
@@ -48,7 +48,7 @@ function Toast({ toast, handleCloseToast }: ToastType) {
                 <Icon
                     name="circleExclamationFilled"
                     color="orange"
-                    size={24}
+                    size={26}
                 />
             ),
             status: "warning",
@@ -59,6 +59,7 @@ function Toast({ toast, handleCloseToast }: ToastType) {
     const toastOption = toast.type && toastOptions[toast.type];
 
     return (
+        toast.show &&
         toastOption && (
             <dialog
                 className={`toast__container ${toastOption.status}`}

@@ -36,10 +36,6 @@
         &:checked::after {
             left: 65%;
         }
-
-        &:focus {
-            outline: 2px solid var(--secondary-focus-color);
-        }
     }
 
     &__moon {

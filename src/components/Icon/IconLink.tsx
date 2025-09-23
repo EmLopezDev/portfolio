@@ -6,6 +6,7 @@ type IconLinkType = {
     size?: number | string;
     color?: string;
     target?: "_self" | "_blank" | "_parent" | "_top";
+    className?: string;
 };
 
 export const IconLink = ({
@@ -14,11 +15,13 @@ export const IconLink = ({
     size = 16,
     color = "currentColor",
     target = "_self",
+    className = "",
 }: IconLinkType) => {
     return (
         <a
             href={href}
             target={target}
+            className={className}
         >
             <Icon
                 name={name}

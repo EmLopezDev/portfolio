@@ -24,24 +24,28 @@ function Sidebar() {
             <span className="sidebar__bullet">&#8226;</span>
             <div className="sidebar__social">
                 <IconLink
+                    className="sidebar__social--item"
                     href="http://www.linkedin.com/in/emmanuel-lopez-a812b0127"
                     name="linkedin"
                     size={24}
                     target="_blank"
                 />
                 <IconLink
+                    className="sidebar__social--item"
                     href="https://github.com/EmLopezDev"
                     name="github"
                     size={24}
                     target="_blank"
                 />
                 <IconLink
+                    className="sidebar__social--item"
                     href="https://bsky.app/profile/emlopezdev.bsky.social"
                     name="bluesky"
                     size={24}
                     target="_blank"
                 />
                 <IconLink
+                    className="sidebar__social--item"
                     href="https://x.com/emlopezdev"
                     name="xtwitter"
                     size={24}

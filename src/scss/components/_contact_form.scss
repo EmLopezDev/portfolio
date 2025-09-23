@@ -6,7 +6,7 @@
     inset: 0;
     width: 100%;
     z-index: 99;
-    background-color: hsla(0, 0%, 10%, 0.8);
+    background-color: var(--overlay-bg-color);
     display: none;
     cursor: pointer;
 
@@ -21,8 +21,8 @@
     position: fixed;
     top: 0;
     right: -400px;
-    background-color: var(--terciary-bg-color);
-    color: var(--primary-text-color);
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-text-color);
     padding-block: u.rem(40);
     padding-inline: u.rem(40);
     display: flex;
@@ -54,12 +54,11 @@
     &__form {
         display: flex;
         flex-direction: column;
-        // gap: u.rem(16);
 
         &--label {
             display: flex;
             flex-direction: column;
-            color: var(--primary-text-color);
+            color: var(--secondary-text-color);
             font-size: u.rem(18);
         }
 
@@ -67,22 +66,24 @@
             height: u.rem(40);
             border-radius: u.rem(4);
             border: none;
-            background-color: var(--white-200);
+            background-color: var(--primary-bg-color);
             padding-inline: u.rem(20);
             padding-block: u.rem(20);
             margin-block-start: u.rem(8);
             margin-block-end: u.rem(4);
+            color: var(--primary-text-color);
         }
         &--text-area {
             height: u.rem(150);
             border-radius: u.rem(4);
             border: none;
-            background-color: var(--white-200);
+            background-color: var(--primary-bg-color);
             resize: none;
             padding-inline: u.rem(20);
             padding-block: u.rem(20);
             margin-block-start: u.rem(8);
             margin-block-end: u.rem(4);
+            color: var(--primary-text-color);
         }
 
         &--submit {
@@ -90,7 +91,7 @@
             border-radius: u.rem(4);
             color: var(--white-200);
             border: 1px solid var(--border);
-            background-color: var(--primary);
+            background-color: var(--primary-button-bg-color);
             margin-block-start: u.rem(8);
         }
 

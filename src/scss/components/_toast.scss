@@ -37,6 +37,7 @@ $toast-width: u.rem(350);
 .toast {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: u.rem(16);
     padding-inline: u.rem(20);
     color: var(--primary-text-color);
@@ -55,7 +56,7 @@ $toast-width: u.rem(350);
     }
 
     &__message {
-        font-size: u.rem(18);
+        font-size: u.rem(16);
         line-height: u.rem(24);
         letter-spacing: u.rem(0.8);
     }
