@@ -1,8 +1,8 @@
 import Loader from "../components/Loader/Loader";
 
-function LoadingPage() {
+function Loading() {
     return (
-        <div className="page__loading">
+        <div className="loading">
             <Loader
                 text="Loading"
                 size="large"
@@ -11,4 +11,4 @@ function LoadingPage() {
     );
 }
 
-export default LoadingPage;
+export default Loading;

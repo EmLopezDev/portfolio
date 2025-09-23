@@ -13,9 +13,11 @@ function Layout() {
     return (
         <main className="app__container">
             <Sidebar />
-            <div className="page__container">
-                <Outlet />
-            </div>
+            <section className="page__container">
+                <div className="page">
+                    <Outlet />
+                </div>
+            </section>
             <ContactButton setIsOpen={setIsFormOpen} />
             {isFormOpen && (
                 <ContactForm

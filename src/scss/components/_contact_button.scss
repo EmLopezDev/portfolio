@@ -6,9 +6,18 @@
     top: 40px;
     right: 40px;
     padding-inline: u.rem(20);
-    padding-block: u.rem(15);
+    padding-block: u.rem(16);
     border-radius: u.rem(5);
-    border: 1px solid var(--border);
+    border: none;
     background-color: var(--primary-button-bg-color);
     color: var(--secondary-text-color);
+    font-size: u.rem(14);
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: u.rem(0.8);
+    transition: scale 300ms ease-in-out;
+
+    &:hover {
+        scale: (1.1);
+    }
 }

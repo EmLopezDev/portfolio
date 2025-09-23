@@ -28,8 +28,7 @@
                 border-radius: u.rem(8);
             }
 
-            &:focus {
-                outline: 2px solid var(--focus-color);
+            &:focus-visible {
                 border-radius: u.rem(8);
             }
         }

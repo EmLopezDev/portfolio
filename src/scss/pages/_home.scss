@@ -1,0 +1,7 @@
+@use "../utils/" as u;
+
+.home {
+    height: 100%;
+    border: 1px solid black;
+    padding: u.rem(40);
+}

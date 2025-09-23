@@ -72,6 +72,7 @@
             margin-block-start: u.rem(8);
             margin-block-end: u.rem(4);
             color: var(--primary-text-color);
+            font-size: u.rem(16);
         }
         &--text-area {
             height: u.rem(150);
@@ -84,15 +85,18 @@
             margin-block-start: u.rem(8);
             margin-block-end: u.rem(4);
             color: var(--primary-text-color);
+            font-size: u.rem(16);
         }
 
         &--submit {
-            height: u.rem(40);
-            border-radius: u.rem(4);
             color: var(--white-200);
-            border: 1px solid var(--border);
+            border: none;
             background-color: var(--primary-button-bg-color);
             margin-block-start: u.rem(8);
+            padding-inline: u.rem(20);
+            padding-block: u.rem(16);
+            border-radius: u.rem(5);
+            font-size: u.rem(16);
         }
 
         & span {

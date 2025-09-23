@@ -15,18 +15,33 @@
     &__theme {
         width: 100%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
     }
 
     &__info {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: u.rem(12);
-        font-size: u.rem(18);
+        gap: u.rem(24);
+        cursor: default;
+
+        &--name {
+            font-size: u.rem(20);
+            font-weight: bold;
+            line-height: 100%;
+            letter-spacing: u.rem(2);
+        }
+
+        &--location {
+            font-size: u.rem(16);
+            line-height: 100%;
+            letter-spacing: u.rem(2);
+            color: var(--platinum);
+        }
 
         &--image {
             width: u.rem(180);
+            border: 3px solid var(--platinum);
             border-radius: 50%;
         }
     }
@@ -43,6 +58,7 @@
         &--item {
             display: flex;
             align-items: center;
+            color: var(--platinum);
         }
     }
 }

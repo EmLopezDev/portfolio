@@ -44,6 +44,10 @@ button {
 }
 
 :focus {
+    outline: none;
+}
+
+:focus-visible {
     outline: 2px solid var(--focus-color);
 }
 
@@ -52,11 +56,11 @@ button {
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: white;
+    background: url(../../assets/images/moon-clouds.jpg) no-repeat center;
+    background-size: cover;
 }
 
 .app__container {
-    height: 100%;
     width: 100%;
     max-width: u.rem(1800);
     background-color: var(--primary-bg-color);
@@ -68,8 +72,12 @@ button {
 }
 
 .page__container {
-    height: 100%;
     width: calc(100% - u.rem(300));
     padding-inline: u.rem(40);
     padding-block: u.rem(40);
+}
+
+.page {
+    height: 100%;
+    padding-block-start: u.rem(54);
 }
