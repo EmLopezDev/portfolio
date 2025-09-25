@@ -1,64 +1,119 @@
 @use "../utils/" as u;
 
 .sidebar {
-    min-height: 100%;
-    width: u.rem(300);
-    padding-inline: u.rem(40);
-    padding-block: u.rem(40);
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     background-color: var(--secondary-bg-color);
     color: var(--secondary-text-color);
+    height: u.rem(175);
+    padding-inline: u.rem(20);
+    padding-block: u.rem(20);
+
+    @include u.breakpoint("desktop") {
+        min-height: 100%;
+        width: u.rem(300);
+        padding-inline: u.rem(40);
+        padding-block: u.rem(40);
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     &__theme {
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
+        align-items: flex-start;
+        @include u.breakpoint("desktop") {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+        }
     }
 
     &__info {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: u.rem(24);
-        cursor: default;
+        justify-content: space-between;
+        width: 100%;
 
-        &--name {
-            font-size: u.rem(20);
-            font-weight: bold;
-            line-height: 100%;
-            letter-spacing: u.rem(2);
+        @include u.breakpoint("desktop") {
+            gap: u.rem(24);
+            flex-direction: column;
+            align-items: center;
         }
 
-        &--location {
-            font-size: u.rem(16);
-            line-height: 100%;
-            letter-spacing: u.rem(2);
-            color: var(--platinum);
+        &--container {
+            display: flex;
+            align-items: center;
+            gap: u.rem(16);
+            cursor: default;
+            @include u.breakpoint("desktop") {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         &--image {
-            width: u.rem(180);
-            border: 3px solid var(--platinum);
+            width: u.rem(60);
+            height: u.rem(60);
             border-radius: 50%;
+            border: 1px solid var(--platinum);
+
+            @include u.breakpoint("desktop") {
+                border: 3px solid var(--platinum);
+                width: u.rem(180);
+                height: u.rem(180);
+            }
+        }
+
+        &--personal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: u.rem(8);
+        }
+
+        &--name {
+            font-weight: bold;
+            line-height: 100%;
+            letter-spacing: u.rem(2);
+
+            @include u.breakpoint("desktop") {
+                font-size: u.rem(20);
+            }
+        }
+
+        &--location {
+            font-size: u.rem(14);
+            line-height: 100%;
+            letter-spacing: u.rem(2);
+            color: var(--platinum);
+
+            @include u.breakpoint("desktop") {
+                font-size: u.rem(16);
+            }
         }
     }
 
     &__bullet {
-        font-size: u.rem(24);
+        display: none;
+        @include u.breakpoint("desktop") {
+            display: block;
+            font-size: u.rem(24);
+        }
     }
 
     &__social {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: u.rem(18);
+        display: none;
+        @include u.breakpoint("desktop") {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: u.rem(18);
 
-        &--item {
-            display: flex;
-            align-items: center;
-            color: var(--platinum);
+            &--item {
+                display: flex;
+                align-items: center;
+                color: var(--platinum);
+            }
         }
     }
 }

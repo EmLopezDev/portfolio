@@ -59,29 +59,34 @@ function Toast({ toast, handleCloseToast }: ToastType) {
     const toastOption = toast.type && toastOptions[toast.type];
 
     return (
-        toast.show &&
-        toastOption && (
-            <dialog
-                className={`toast__container ${toastOption.status}`}
-                open
-            >
-                <IconButton
-                    className="toast__container--close"
-                    iconName="close"
-                    iconSize={24}
-                    onClick={handleCloseToast}
-                />
-                <div className="toast">
-                    <div className="toast__header">
-                        {toastOption.icon}
-                        <span className="toast__header--status">
-                            {toastOption.status}
-                        </span>
+        <dialog
+            className={`toast__container ${
+                toastOption?.status ? toastOption.status : ""
+            }`}
+            open
+        >
+            {toastOption && (
+                <>
+                    <IconButton
+                        className="toast__container--close"
+                        iconName="close"
+                        iconSize={24}
+                        onClick={handleCloseToast}
+                    />
+                    <div className="toast">
+                        <div className="toast__header">
+                            {toastOption?.icon}
+                            <span className="toast__header--status">
+                                {toastOption.status}
+                            </span>
+                        </div>
+                        <div className="toast__message">
+                            {toastOption?.message}
+                        </div>
                     </div>
-                    <div className="toast__message">{toastOption.message}</div>
-                </div>
-            </dialog>
-        )
+                </>
+            )}
+        </dialog>
     );
 }
 

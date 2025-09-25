@@ -20,7 +20,7 @@
     width: u.rem(400);
     position: fixed;
     top: 0;
-    right: -400px;
+    right: u.rem(-400);
     background-color: var(--secondary-bg-color);
     color: var(--secondary-text-color);
     padding-block: u.rem(40);
@@ -63,7 +63,7 @@
         }
 
         &--input {
-            height: u.rem(40);
+            height: u.rem(48);
             border-radius: u.rem(4);
             border: none;
             background-color: var(--primary-bg-color);
@@ -72,7 +72,11 @@
             margin-block-start: u.rem(8);
             margin-block-end: u.rem(4);
             color: var(--primary-text-color);
-            font-size: u.rem(16);
+            font-size: u.rem(24);
+
+            @include u.breakpoint("desktop") {
+                font-size: u.rem(18);
+            }
         }
         &--text-area {
             height: u.rem(150);
@@ -85,10 +89,15 @@
             margin-block-start: u.rem(8);
             margin-block-end: u.rem(4);
             color: var(--primary-text-color);
-            font-size: u.rem(16);
+            font-size: u.rem(24);
+
+            @include u.breakpoint("desktop") {
+                font-size: u.rem(18);
+            }
         }
 
         &--submit {
+            height: u.rem(48);
             color: var(--white-200);
             border: none;
             background-color: var(--primary-button-bg-color);
@@ -96,13 +105,21 @@
             padding-inline: u.rem(20);
             padding-block: u.rem(16);
             border-radius: u.rem(5);
-            font-size: u.rem(16);
+            font-size: u.rem(20);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:disabled {
+                pointer-events: none;
+                cursor: default;
+            }
         }
 
-        & span {
+        &--error {
             margin-block-end: u.rem(8);
             height: u.rem(25);
-            color: darkred;
+            color: var(--danger);
         }
     }
 }

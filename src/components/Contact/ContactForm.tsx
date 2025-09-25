@@ -192,7 +192,9 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
                             name="name"
                             onChange={onNameChange}
                         />
-                        <span>{nameError}</span>
+                        <span className="contact__form--error">
+                            {nameError}
+                        </span>
                     </label>
                     <label
                         className="contact__form--label"
@@ -207,7 +209,9 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
                             placeholder="example@gmail.com"
                             onChange={onEmailChange}
                         />
-                        <span>{emailError}</span>
+                        <span className="contact__form--error">
+                            {emailError}
+                        </span>
                     </label>
                     <label
                         className="contact__form--label"
@@ -222,7 +226,9 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
                             placeholder=""
                             onChange={onSubjectChange}
                         />
-                        <span>{subjectError}</span>
+                        <span className="contact__form--error">
+                            {subjectError}
+                        </span>
                     </label>
                     <label
                         className="contact__form--label"
@@ -236,9 +242,14 @@ function ContactForm({ isOpen, setIsOpen, handleShowToast }: ContactFormType) {
                             onChange={onMessageChange}
                             placeholder="Please write a brief message as to what you would like us to chat about"
                         ></textarea>
-                        <span>{messageError}</span>
+                        <span className="contact__form--error">
+                            {messageError}
+                        </span>
                     </label>
-                    <button className="contact__form--submit">
+                    <button
+                        className="contact__form--submit"
+                        disabled={isSending}
+                    >
                         {isSending ? <Loader size="small" /> : "Submit"}
                     </button>
                 </form>

@@ -2,12 +2,16 @@
 
 .nav {
     width: 100%;
+
     &__list {
         display: flex;
-        flex-direction: column;
-        gap: u.rem(24);
-        font-size: u.rem(24);
+        justify-content: space-between;
         color: var(--secondary-text-color);
+
+        @include u.breakpoint("desktop") {
+            flex-direction: column;
+            gap: u.rem(24);
+        }
 
         &--item {
             width: 100%;
@@ -15,7 +19,16 @@
             justify-content: center;
             line-height: 100%;
             letter-spacing: u.rem(0.8);
-            padding: u.rem(20);
+            padding-block: u.rem(15);
+            padding-inline: u.rem(20);
+            font-weight: 700;
+            font-size: u.rem(18);
+
+            @include u.breakpoint("desktop") {
+                padding: u.rem(20);
+                font-size: u.rem(24);
+                font-weight: normal;
+            }
 
             &:hover {
                 background-color: var(--terciary-bg-color);
@@ -28,6 +41,27 @@
                 border-radius: u.rem(8);
             }
 
+            &:focus-visible {
+                border-radius: u.rem(8);
+            }
+        }
+
+        &--button {
+            line-height: 100%;
+            letter-spacing: u.rem(0.8);
+            padding-block: u.rem(15);
+            padding-inline: u.rem(20);
+            background-color: transparent;
+            border: none;
+            color: inherit;
+            font-size: u.rem(18);
+            font-weight: 700;
+
+            &:hover {
+                background-color: var(--terciary-bg-color);
+                border-radius: u.rem(8);
+                color: var(--primary-text-color-hover);
+            }
             &:focus-visible {
                 border-radius: u.rem(8);
             }

@@ -1,26 +1,45 @@
 import { IconLink } from "../Icon/IconLink";
 import ThemeButton from "../ThemeButton/ThemeButton";
 import Nav from "../Nav/Nav";
+import useWindowSize from "../../hooks/useWindowSize";
 
-function Sidebar() {
+type SidebarType = {
+    setIsContactOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+function Sidebar({ setIsContactOpen }: SidebarType) {
+    const { isMobile, isDesktop } = useWindowSize();
     return (
         <aside className="sidebar">
-            <div className="sidebar__theme">
-                <ThemeButton />
-            </div>
+            {isDesktop && (
+                <div className="sidebar__theme">
+                    <ThemeButton />
+                </div>
+            )}
             <div className="sidebar__info">
-                <img
-                    className="sidebar__info--image"
-                    src="/src/assets/images/profile_picture.jpeg"
-                    alt=""
-                />
-                <span className="sidebar__info--name">Emmanuel Lopez</span>
-                <span className="sidebar__info--location">
-                    New York City, NY
-                </span>
+                <div className="sidebar__info--container">
+                    <img
+                        className="sidebar__info--image"
+                        src="/src/assets/images/profile_picture.jpeg"
+                        alt=""
+                    />
+                    <div className="sidebar__info--personal">
+                        <span className="sidebar__info--name">
+                            Emmanuel Lopez
+                        </span>
+                        <span className="sidebar__info--location">
+                            New York City, NY
+                        </span>
+                    </div>
+                </div>
+                {isMobile && (
+                    <div className="sidebar__theme">
+                        <ThemeButton />
+                    </div>
+                )}
             </div>
             <span className="sidebar__bullet">&#8226;</span>
-            <Nav />
+            <Nav setOpenContact={setIsContactOpen} />
             <span className="sidebar__bullet">&#8226;</span>
             <div className="sidebar__social">
                 <IconLink

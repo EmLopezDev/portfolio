@@ -6,24 +6,28 @@ $toast-width: u.rem(350);
     position: fixed;
     width: $toast-width;
     height: u.rem(200);
-    top: u.rem(20);
+    top: u.rem(-220);
     left: calc(50% - ($toast-width / 2));
     border: none;
     border-radius: u.rem(20);
     padding-inline: u.rem(20);
     padding-block: u.rem(20);
     z-index: 999;
+    transition: top 300ms ease-in-out;
 
     &.success {
         background-color: var(--success);
+        top: u.rem(20);
     }
 
     &.failure {
         background-color: var(--danger);
+        top: u.rem(20);
     }
 
     &.warning {
         background-color: var(--warning);
+        top: u.rem(20);
     }
 
     &--close {

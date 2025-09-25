@@ -61,23 +61,48 @@ button {
 }
 
 .app__container {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    max-width: u.rem(1800);
     background-color: var(--primary-bg-color);
     color: var(--primary-text-color);
-    display: flex;
     position: relative;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    @include u.breakpoint("desktop") {
+        max-width: u.rem(1800);
+        flex-direction: row;
+    }
 }
 
 .page__container {
-    width: calc(100% - u.rem(300));
-    padding-inline: u.rem(40);
-    padding-block: u.rem(40);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: calc(100% - u.rem(200));
+
+    @include u.breakpoint("desktop") {
+        gap: u.rem(24);
+        width: calc(100% - u.rem(300));
+        padding-inline: u.rem(40);
+        padding-block: u.rem(40);
+        height: 100%;
+    }
+
+    &--meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &--button {
+        position: fixed;
+        bottom: u.rem(32);
+        right: u.rem(32);
+    }
 }
 
 .page {
     height: 100%;
-    padding-block-start: u.rem(54);
+    padding: u.rem(32);
 }
