@@ -72,7 +72,7 @@
             margin-block-start: u.rem(8);
             margin-block-end: u.rem(4);
             color: var(--primary-text-color);
-            font-size: u.rem(24);
+            font-size: u.rem(22);
 
             @include u.breakpoint("desktop") {
                 font-size: u.rem(18);
@@ -89,7 +89,7 @@
             margin-block-start: u.rem(8);
             margin-block-end: u.rem(4);
             color: var(--primary-text-color);
-            font-size: u.rem(24);
+            font-size: u.rem(22);
 
             @include u.breakpoint("desktop") {
                 font-size: u.rem(18);
